@@ -248,7 +248,7 @@ function showFavs() {
                 }
             }
         } else {
-            favList.innerHTML = '<p class="col">Debes iniciar sesión para guardar favoritos</p>';
+            favList.innerHTML = '<p class="col">You must be logged in to save favourites</p>';
         }
     }
 }
