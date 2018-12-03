@@ -315,7 +315,7 @@ function determineFav(){
                     document.querySelector('.tooltip-msg').style.left = e.clientX - 100 +'px';
                     setTimeout(function() {
                         document.querySelector('.tooltip-msg').classList.add('d-none');
-                    }, 500);
+                    }, 1000);
                 }
             })
         }
