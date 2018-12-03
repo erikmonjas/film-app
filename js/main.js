@@ -47,7 +47,7 @@ if(!!filmForm){
         filmTitle = filmTitle.replace(/ /g, '+');
     
         // RECOGER DATOS
-        fetch('http://www.omdbapi.com/?s='+ filmTitle +'&apikey=f12ba140&').then(function (response) {
+        fetch('https://www.omdbapi.com/?s='+ filmTitle +'&apikey=f12ba140&').then(function (response) {
             return response.json();
         }).then(function (data) {
             console.log(data);
@@ -112,7 +112,7 @@ function filmDetails(filmItemID) {
 function showFilmDetails() {
     var filmID = sessionStorage.getItem('filmID');
 
-    fetch('http://www.omdbapi.com/?i='+ filmID +'&apikey=f12ba140&').then(function (response) {
+    fetch('https://www.omdbapi.com/?i='+ filmID +'&apikey=f12ba140&').then(function (response) {
         return response.json();
     }).then(function (data) {
         console.log(data);
@@ -283,7 +283,7 @@ function determineFav(){
                     e.target.classList.remove('fav-icon--empty');
 
 
-                    fetch('http://www.omdbapi.com/?i='+ thisID +'&apikey=f12ba140&').then(function (response) {
+                    fetch('https://www.omdbapi.com/?i='+ thisID +'&apikey=f12ba140&').then(function (response) {
                         return response.json();
                     }).then(function (data) {
                         if(!!data.imdbID){
