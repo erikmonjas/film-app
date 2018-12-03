@@ -236,7 +236,7 @@ function showFavs() {
                 favList.innerHTML = '<p class="col">No favourites added yet</p>';
             } else{
                 for (let i = 0; i < userFavs.length; i++) {
-                    favRender = favRender.concat('<li class="film-item col-12 col-md-4 d-flex align-items-center mb-3" data-id="'+ userFavs[i].imdbID +'"><img src="'+ userFavs[i].Poster +'"><div><p>'+ userFavs[i].Title +' ('+ userFavs[i].Year +')</p><button class="details-button btn btn-primary">Ver detalle</button><img src="./img/star-full.png" alt="is favourite" class="fav-icon fav-icon--full ml-3"></div></li>');
+                    favRender = favRender.concat('<li class="film-item col-12 col-md-4 d-flex align-items-center mb-3" data-id="'+ userFavs[i].imdbID +'"><img src="'+ userFavs[i].Poster +'"><div><p>'+ userFavs[i].Title +' ('+ userFavs[i].Year +')</p><button class="details-button btn btn-primary">Ver detalle</button></div></li>');
 
                     favList.innerHTML = favRender;
                 }
@@ -245,19 +245,6 @@ function showFavs() {
                         var filmItemID = this.parentElement.parentElement.dataset.id;
                         filmDetails(filmItemID);
                     })
-                }
-                for (let k = 0; k < favList.querySelectorAll('.fav-icon').length; k++) {
-                    favList.querySelectorAll('.fav-icon')[k].addEventListener('click', function(e){
-                        var index = favMovieIdentifiers.indexOf(e.target.parentElement.parentElement.dataset.id);
-
-                        if (index > -1){
-                            favMovieIdentifiers.splice(index, 1);
-                            userFavs.splice(index, 1);
-                            localStorage.setItem(''+ userName +'Favs', JSON.stringify(userFavs));
-                        }
-                            
-                        return showFavs();
-                        })
                 }
             }
         } else {
