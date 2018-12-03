@@ -208,3 +208,14 @@ img.fav-icon{
     top: 5px;
     left: 20px;
 }
+
+.tooltip-msg{
+    padding: 10px;
+    background-color: #67efb2;
+    color: #2e3d63;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}

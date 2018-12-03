@@ -84,10 +84,7 @@ if(!!filmForm){
                     })
                 }
 
-                //HACER FAVORITO
-                if(!!isUser){
-                    determineFav();
-                 } 
+                determineFav();
 
             }
         }).catch(function (err) {
@@ -162,9 +159,9 @@ function showFilmDetails() {
                 }
             } 
             
-            determineFav();
-
+            
         }
+        determineFav();
 
     }).catch(function (err) {
         console.log(err);
@@ -261,55 +258,64 @@ function determineFav(){
     if (favIcon.length > 0){
         for (let i = 0; i < favIcon.length; i++) {
             favIcon[i].addEventListener('click', function(e){
-                var thisID = e.target.parentElement.parentElement.dataset.id;
+                if(!!isUser){
+                    var thisID = e.target.parentElement.parentElement.dataset.id;
 
-                if(e.target.classList.contains('fav-icon--empty')){
-                    e.target.setAttribute('src', './img/star-full.png');
-                    e.target.setAttribute('alt', 'is favourite');
-                    e.target.classList.add('fav-icon--full');
-                    e.target.classList.remove('fav-icon--empty');
+                    if(e.target.classList.contains('fav-icon--empty')){
+                        e.target.setAttribute('src', './img/star-full.png');
+                        e.target.setAttribute('alt', 'is favourite');
+                        e.target.classList.add('fav-icon--full');
+                        e.target.classList.remove('fav-icon--empty');
 
 
-                    fetch('https://www.omdbapi.com/?i='+ thisID +'&apikey=f12ba140&').then(function (response) {
-                        return response.json();
-                    }).then(function (data) {
-                        if(!!data.imdbID){
-                            var alreadyFav = false;
+                        fetch('https://www.omdbapi.com/?i='+ thisID +'&apikey=f12ba140&').then(function (response) {
+                            return response.json();
+                        }).then(function (data) {
+                            if(!!data.imdbID){
+                                var alreadyFav = false;
 
-                            for (let i = 0; i < userFavs.length; i++) {
-                                if (!alreadyFav){
-                                    if (userFavs[i].imdbID === data.imdbID){
-                                        alreadyFav = true;
+                                for (let i = 0; i < userFavs.length; i++) {
+                                    if (!alreadyFav){
+                                        if (userFavs[i].imdbID === data.imdbID){
+                                            alreadyFav = true;
+                                        }
                                     }
                                 }
-                            }
-                            if(!alreadyFav){
-                                userFavs = userFavs.concat(data);
-                                localStorage.setItem(''+ userName +'Favs', JSON.stringify(userFavs));
-                            }
+                                if(!alreadyFav){
+                                    userFavs = userFavs.concat(data);
+                                    localStorage.setItem(''+ userName +'Favs', JSON.stringify(userFavs));
+                                }
 
-                            favMovieIdentifiers = favMovieIdentifiers.concat(data.imdbID);
+                                favMovieIdentifiers = favMovieIdentifiers.concat(data.imdbID);
 
-                            return showFavs();
+                                return showFavs();
+                            }
+                        })
+
+
+                    } else if (e.target.classList.contains('fav-icon--full')){
+                        e.target.setAttribute('src', './img/star.png');
+                        e.target.setAttribute('alt', 'add to favourites');
+                        e.target.classList.add('fav-icon--empty');
+                        e.target.classList.remove('fav-icon--full');
+
+                        var index = favMovieIdentifiers.indexOf(thisID);
+
+                        if (index > -1){
+                            favMovieIdentifiers.splice(index, 1);
+                            userFavs.splice(index, 1);
+                            localStorage.setItem(''+ userName +'Favs', JSON.stringify(userFavs));
                         }
-                    })
-
-
-                } else if (e.target.classList.contains('fav-icon--full')){
-                    e.target.setAttribute('src', './img/star.png');
-                    e.target.setAttribute('alt', 'add to favourites');
-                    e.target.classList.add('fav-icon--empty');
-                    e.target.classList.remove('fav-icon--full');
-
-                    var index = favMovieIdentifiers.indexOf(thisID);
-
-                    if (index > -1){
-                        favMovieIdentifiers.splice(index, 1);
-                        userFavs.splice(index, 1);
-                        localStorage.setItem(''+ userName +'Favs', JSON.stringify(userFavs));
+                            
+                        return showFavs();
                     }
-                        
-                    return showFavs();
+                } else {
+                    document.querySelector('.tooltip-msg').classList.remove('d-none');
+                    document.querySelector('.tooltip-msg').style.top = pageYOffset + e.clientY - 70 +'px';
+                    document.querySelector('.tooltip-msg').style.left = e.clientX - 100 +'px';
+                    setTimeout(function() {
+                        document.querySelector('.tooltip-msg').classList.add('d-none');
+                    }, 500);
                 }
             })
         }
