@@ -1,0 +1,210 @@
+@import url('./reset.css');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,700');
+
+body{
+    background: #2e3d63;
+    color: #8199fc;
+    font-family: 'Rajdhani';
+}
+
+a{
+    color: inherit;
+}
+
+.header{
+    padding-top: 25px;
+}
+
+h1{
+    font-size: 3.5rem;
+}
+
+@media (max-width: 460px){
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:992px){
+    .login-form{
+        position: relative;
+    }
+    .login-form__inputs{
+        position: absolute;
+        top: 130%;
+        right: 10%;
+        width: 200px;
+        background-color: #495b8a;
+        padding: 10px 2vw 20px 2vw;
+        border-radius: 4px;
+    }
+    .login-form__inputs:before{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #495b8a transparent;
+    }
+    .login-form__inputs input{
+        margin-left: 0!important;
+        margin-right: 0!important;
+    }
+    .login-form__inputs input:last-of-type{
+        margin-top: 10px;
+    }
+    .login-form__inputs button{
+        margin-top: 15px;
+    }
+}
+
+@media (max-width:992px){
+    .desktop-login-error{
+        display: none;
+    }
+}
+
+@media (min-width:992px){
+    .mobile-login-error{
+        display: none;
+    }
+}
+
+.ls-5{
+    letter-spacing: 5px;
+}
+
+.ls-10{
+    letter-spacing: 10px;
+}
+
+.p-relative{
+    position: relative;
+}
+
+.btn-primary{
+    background-color: #67efb2;
+    color: #2e3d63;
+    font-weight: 700;
+}
+
+.btn-primary:hover{
+    background-color: #8cffcb;
+    color: #2e3d63;
+}
+
+.form-control{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #67efb2;
+    color: #67efb2;
+}
+
+.form__input:focus{
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #67efb2;
+    outline: none;
+    color: #67efb2;
+}
+
+.form__input::placeholder{
+    color: #67efb2;
+}
+
+.logo{
+    width: 50px;
+    filter: invert(1);
+}
+
+.form__input{
+    margin-right: 10px;
+    max-width: 300px;
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid #67efb2;
+    color: #67efb2;
+}
+
+.film-search__results img, .fav-list img{
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
+#newUserForm{
+    margin: 0 auto;
+    width: 300px;
+}
+
+.user-data__img{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+.user-data__img img{
+    width: 30px;
+    height: auto;
+}
+
+.user-data__name{
+    color: #fff;
+}
+
+img.fav-icon{
+    width: 25px;
+    cursor: pointer;
+}
+
+.close-detail{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+@media (max-width: 768px){
+    .close-detail{
+        right: 2vw;
+    }
+}
+
+@media (max-width: 540px){
+    .close-detail{
+        right: 35px;
+        top: -30px;
+    }
+}
+
+.main-img{
+    margin: 0 auto;
+}
+
+.detail__fav-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.detail__fav-icon-bg{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2e3d63;
+    top: 5px;
+    left: 20px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Erik Monjas Prueba</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header class="navbar d-flex space-between header">
+        <div class="container">
+            <a href="index.html"><img src="./img/logo.png" alt="logo" class="logo"></a>
+        </div>
+    </header>
+    <main>
+        <div class="container mt-5">
+            <h1 class="text-uppercase text-center ls-5">Register user</h1>
+            <section>
+                <form class="form-group mt-5 text" id="newUserForm">
+                    <label for="user" class="d-none">User name</label>
+                    <input type="text" class="form-control form__input" id="user" name="user" placeholder="User name">
+                    <label for="password" class="d-none">Password</label>
+                    <input type="password" class="form-control form__input mt-4" id="password" name="password" placeholder="Password">
+                    <span class="user-form-error font-weight-bold d-none text-white mt-4">Fill all fields, please</span>
+                    <button type="submit" class="btn btn-primary mt-4">Register</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+<!-- 
+//BORRAR FAVORITO
+function detectRemoveFav(){
+    if(!!document.querySelector('.fav-icon--full')){
+        for (let i = 0; i < document.querySelectorAll('.fav-icon--full').length; i++) {
+            this.addEventListener('click', function(e){
+                var filmItemIDString = e.target.parentElement.parentElement.id;
+                var filmItemID = filmItemIDString.replace(/-fav/g, '');
+
+                var elementToDelete = favMovieIdentifier.indexOf(filmItemID);
+                userFavs.splice(elementToDelete, 1);
+                localStorage.setItem(''+ userName +'Favs', JSON.stringify(userFavs))
+                showFavs();
+            })
+        }
+    }
+} -->
