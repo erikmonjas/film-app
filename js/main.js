@@ -311,8 +311,16 @@ function determineFav(){
                     }
                 } else {
                     document.querySelector('.tooltip-msg').classList.remove('d-none');
-                    document.querySelector('.tooltip-msg').style.top = pageYOffset + e.clientY - 70 +'px';
-                    document.querySelector('.tooltip-msg').style.left = e.clientX - 100 +'px';
+                    if((pageYOffset + e.clientY - 70) > 10){
+                        document.querySelector('.tooltip-msg').style.top = pageYOffset + e.clientY - 70 +'px';
+                    } else {
+                        document.querySelector('.tooltip-msg').style.top = '10px';
+                    }
+                    if ((e.clientX - 100) > 10){
+                        document.querySelector('.tooltip-msg').style.left = e.clientX - 100 +'px';
+                    } else{
+                        document.querySelector('.tooltip-msg').style.left = '10px';
+                    }
                     setTimeout(function() {
                         document.querySelector('.tooltip-msg').classList.add('d-none');
                     }, 1000);
