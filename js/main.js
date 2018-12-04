@@ -355,8 +355,6 @@ function fadeIn(){
     }, 100);
 }
 
-fadeIn();
-
 //FADE-OUT
 function fadeOut(){
     for (var i = 0; i < document.querySelectorAll('.fade-out').length; i++) {
