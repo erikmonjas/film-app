@@ -219,3 +219,9 @@ img.fav-icon{
     border-radius: 4px;
     font-size: 0.8rem;
 }
+
+@media (max-width: 768px){
+    .tooltip-msg{
+        max-width: 170px;
+    }
+}
