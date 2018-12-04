@@ -10,6 +10,7 @@ var isUser = false;
 var userName = sessionStorage.getItem('user');
 var userFavs = [];
 
+
 //DETECTAR SI USUARIO ESTÁ REGISTRADO
 function checkUser(){
     if(!!sessionStorage.getItem('user') && !!sessionStorage.getItem('password')){
@@ -66,9 +67,9 @@ if(!!filmForm){
                 // CREAR UN LIST ITEM POR CADA PELÍCULA
                 for (var i = 0; i < movies.length; i++) {
                     if (!favMovieIdentifiers.includes(movies[i].imdbID)){
-                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary">Ver detalle</button><img src="./img/star.png" alt="add to favourites" class="fav-icon fav-icon--empty ml-3"></div></li>');
+                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary fade-out">Ver detalle</button><img src="./img/star.png" alt="add to favourites" class="fav-icon fav-icon--empty ml-3"></div></li>');
                     } else {
-                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary">Ver detalle</button><img src="./img/star-full.png" alt="is favourite" class="fav-icon fav-icon--full ml-3"></div></li>');
+                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary fade-out">Ver detalle</button><img src="./img/star-full.png" alt="is favourite" class="fav-icon fav-icon--full ml-3"></div></li>');
                     }
                 }
                 searchResults.innerHTML = result;
@@ -100,7 +101,10 @@ if(!!filmForm){
 // GUARDAR EL ID EN sessionStorage Y REDIRIGIR A LA PÁGINA DETALLE DE LA PELÍCULA
 function filmDetails(filmItemID) {
     sessionStorage.setItem('filmID', filmItemID);
-    window.location = 'film-detail.html';
+    document.querySelector('.everything-wrapper').style.opacity = '0';
+    setTimeout(function() {
+        window.location = 'film-detail.html';
+    }, 300);
     return false;
 }
 
@@ -172,7 +176,10 @@ function showFilmDetails() {
 if(!!document.querySelector('.close-detail')){
     for (let i = 0; i < document.querySelectorAll('.close-detail').length; i++) {
         document.querySelectorAll('.close-detail')[i].addEventListener('click', function() {
-            window.location = 'index.html';
+            document.querySelector('.everything-wrapper').style.opacity = '0';
+            setTimeout(function() {
+                window.location = 'index.html';
+            }, 300);
         })
     }
 }
@@ -190,7 +197,10 @@ if(!!newUserForm){
         } else{
             sessionStorage.setItem('user', userValue);
             sessionStorage.setItem('password', passwordValue);
-            window.location = 'index.html';
+            document.querySelector('.everything-wrapper').style.opacity = '0';
+            setTimeout(function() {
+                window.location = 'index.html';
+            }, 300);
             checkUser();
         }
     })
@@ -209,20 +219,24 @@ if(!!sessionWrapper){
 }
 
 //MOSTRAR MENÚ ACCEDER MÓVIL
-document.querySelector('.mobile-access').addEventListener('click', function(e){
-    e.preventDefault();
-    document.querySelector('.login-form__inputs').classList.toggle('d-none');
-})
+if(!!document.querySelector('.mobile-access')){
+    document.querySelector('.mobile-access').addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector('.login-form__inputs').classList.toggle('d-none');
+    })
+}
 
 //MENSAJE ERROR SI USUARIO NO REGISTRADO
-sessionWrapper.querySelector('form').addEventListener('submit', function(e){
-    e.preventDefault();
-    if (window.innerWidth > 992){
-        sessionWrapper.querySelector('.desktop-login-error').classList.remove('d-lg-none');
-    } else{
-        sessionWrapper.querySelector('.mobile-login-error').classList.remove('d-none');
-    }
-})
+if(!!sessionWrapper){
+    sessionWrapper.querySelector('form').addEventListener('submit', function(e){
+        e.preventDefault();
+        if (window.innerWidth > 992){
+            sessionWrapper.querySelector('.desktop-login-error').classList.remove('d-lg-none');
+        } else{
+            sessionWrapper.querySelector('.mobile-login-error').classList.remove('d-none');
+        }
+    })
+}
 
 //MOSTRAR PELÍCULAS FAVORITAS
 function showFavs() {
@@ -333,3 +347,23 @@ function determineFav(){
 
 
 
+
+//FADE-IN
+function fadeIn(){
+    setTimeout(function() {
+        document.querySelector('.everything-wrapper').style.opacity = '1';
+    }, 100);
+}
+
+fadeIn();
+
+//FADE-OUT
+function fadeOut(){
+    for (var i = 0; i < document.querySelectorAll('.fade-out').length; i++) {
+        document.querySelectorAll('.fade-out')[i].addEventListener('click', function(e){
+            document.querySelector('.everything-wrapper').style.opacity = '0';
+        })   
+    }
+}
+
+fadeOut()
