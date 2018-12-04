@@ -11,61 +11,63 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header class="navbar d-flex space-between header">
-        <div class="container">
-            <a href="index.html"><img src="./img/logo.png" alt="logo" class="logo"></a>
-            <div class="session-wrapper">
-                <div class="login-form d-flex d-lg-block">
-                    <form class="d-flex align-items-center mt-2">
-                        <div class="login-form__inputs d-none d-lg-flex">
-                            <label for="user" class="d-none">User</label>
-                            <input type="text" id="user" name="user" class="form-control form__input mx-4" placeholder="User">
-                            <label for="password" class="d-none">Password</label>
-                            <input type="text" id="password" name="password" class="form-control form__input mx-4" placeholder="Password">
-                            <span class="mobile-login-error d-none font-weight-bold text-white">Wrong data. Remember you must be registered.</span>
-                            <button type="submit" class="btn btn-primary">Access</button>
-                        </div>
-                    </form>
-                    <a href="create-account.html" class="mobile-access d-lg-none mt-3 ml-4 text-white">Access</a>
-                    <p class="desktop-login-error d-lg-none font-weight-bold float-left mt-3 ml-4 text-white">Wrong data. Remember you must be registered.</p>
-                    <a href="create-account.html" class="register float-right mt-3 ml-4 text-white">Register</a>
-                </div>
-                <div class="user-data d-none flex-column align-items-center">
-                    <span class="user-data__img"><img src="./img/user-avatar.png" alt="avatar"></span>
-                    <span class="user-data__name"></span>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <p class="tooltip-msg d-none">You must be logged in to add favourites</p>
-        <div class="container mt-5">
-            <div class="row info-wrapper">
-                <div class="col-12 col-md-4 mb-4 id-storer">
-                    <img src="" alt="poster" class="main-img img-fluid d-block w-100">
-                    <img src="./img/close.png" alt="cerrar" class="close-detail close-detail d-md-none">
-                    <div class="detail__fav-icon-bg">
-                        <img src="./img/star.png" alt="add to favourites" class="fav-icon fav-icon--empty detail__fav-icon">
+    <div class="everything-wrapper">
+        <header class="navbar d-flex space-between header">
+            <div class="container">
+                <a href="index.html"><img src="./img/logo.png" alt="logo" class="logo fade-out"></a>
+                <div class="session-wrapper">
+                    <div class="login-form d-flex d-lg-block">
+                        <form class="d-flex align-items-center mt-2">
+                            <div class="login-form__inputs d-none d-lg-flex">
+                                <label for="user" class="d-none">User</label>
+                                <input type="text" id="user" name="user" class="form-control form__input mx-4" placeholder="User">
+                                <label for="password" class="d-none">Password</label>
+                                <input type="text" id="password" name="password" class="form-control form__input mx-4" placeholder="Password">
+                                <span class="mobile-login-error d-none font-weight-bold text-white">Wrong data. Remember you must be registered.</span>
+                                <button type="submit" class="btn btn-primary">Access</button>
+                            </div>
+                        </form>
+                        <a href="create-account.html" class="mobile-access d-lg-none mt-3 ml-4 text-white">Access</a>
+                        <p class="desktop-login-error d-lg-none font-weight-bold float-left mt-3 ml-4 text-white">Wrong data. Remember you must be registered.</p>
+                        <a href="create-account.html" class="register float-right mt-3 ml-4 text-white fade-out">Register</a>
+                    </div>
+                    <div class="user-data d-none flex-column align-items-center">
+                        <span class="user-data__img"><img src="./img/user-avatar.png" alt="avatar"></span>
+                        <span class="user-data__name"></span>
                     </div>
                 </div>
-                <div class="col-12 col-md-8 mb-5">
-                    <h1 class="ls-5"></h1>
-                    <h2 class="release h4"></h2>
-                    <p class="actors mt-5">Starring: <span class="actors__slot font-weight-bold"></span></p>
-                    <p class="director">Director: <span class="director__slot font-weight-bold"></span></p>
-                    <p class="genre">Genre: <span class="genre__slot font-weight-bold"></span></p>
-                    <p class="plot">Plot: <span class="plot__slot font-weight-bold"></span></p>
-                    <p class="rating">Rating: <span class="rating__slot font-weight-bold"></span></p>
-                    <p class="country">Country: <span class="country__slot font-weight-bold"></span></p>
-                    <p class="language">Language: <span class="language__slot font-weight-bold"></span></p>
-                    <img src="./img/close.png" alt="close" class="close-detail close-detail-desktop d-none d-md-block">
+            </div>
+        </header>
+        <main>
+            <p class="tooltip-msg d-none">You must be logged in to add favourites</p>
+            <div class="container mt-5">
+                <div class="row info-wrapper">
+                    <div class="col-12 col-md-4 mb-4 id-storer">
+                        <img src="" alt="poster" class="main-img img-fluid d-block w-100">
+                        <img src="./img/close.png" alt="cerrar" class="close-detail close-detail d-md-none fade-out">
+                        <div class="detail__fav-icon-bg">
+                            <img src="./img/star.png" alt="add to favourites" class="fav-icon fav-icon--empty detail__fav-icon">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 mb-5">
+                        <h1 class="ls-5"></h1>
+                        <h2 class="release h4"></h2>
+                        <p class="actors mt-5">Starring: <span class="actors__slot font-weight-bold"></span></p>
+                        <p class="director">Director: <span class="director__slot font-weight-bold"></span></p>
+                        <p class="genre">Genre: <span class="genre__slot font-weight-bold"></span></p>
+                        <p class="plot">Plot: <span class="plot__slot font-weight-bold"></span></p>
+                        <p class="rating">Rating: <span class="rating__slot font-weight-bold"></span></p>
+                        <p class="country">Country: <span class="country__slot font-weight-bold"></span></p>
+                        <p class="language">Language: <span class="language__slot font-weight-bold"></span></p>
+                        <img src="./img/close.png" alt="close" class="close-detail close-detail-desktop d-none d-md-block fade-out">
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <script src="./js/main.js"></script>
-    <script>
-        showFilmDetails();
-    </script>
+        </main>
+        <script src="./js/main.js"></script>
+        <script>
+            showFilmDetails();
+        </script>
+    </div>
 </body>
 </html>
