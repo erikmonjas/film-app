@@ -107,6 +107,7 @@ h1{
     background-color: #67efb2;
     color: #2e3d63;
     font-weight: 700;
+    border: none;
 }
 
 .btn-primary:hover{
