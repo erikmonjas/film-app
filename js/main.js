@@ -367,3 +367,5 @@ function fadeOut(){
 }
 
 fadeOut()
+
+window.onunload= function() {};
