@@ -67,9 +67,9 @@ if(!!filmForm){
                 // CREAR UN LIST ITEM POR CADA PELÍCULA
                 for (var i = 0; i < movies.length; i++) {
                     if (!favMovieIdentifiers.includes(movies[i].imdbID)){
-                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary fade-out">Ver detalle</button><img src="./img/star.png" alt="add to favourites" class="fav-icon fav-icon--empty ml-3"></div></li>');
+                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary fade-out">More info</button><img src="./img/star.png" alt="add to favourites" class="fav-icon fav-icon--empty ml-3"></div></li>');
                     } else {
-                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary fade-out">Ver detalle</button><img src="./img/star-full.png" alt="is favourite" class="fav-icon fav-icon--full ml-3"></div></li>');
+                        result = result.concat('<li class="film-item col-12 col-md-6 col d-flex align-items-center mb-3" data-id="'+ movies[i].imdbID +'"><img src="'+ movies[i].Poster +'"><div><p>'+ movies[i].Title +' ('+ movies[i].Year +')</p><button class="details-button btn btn-primary fade-out">More info</button><img src="./img/star-full.png" alt="is favourite" class="fav-icon fav-icon--full ml-3"></div></li>');
                     }
                 }
                 searchResults.innerHTML = result;
@@ -249,7 +249,7 @@ function showFavs() {
                 favList.innerHTML = '<p class="col">No favourites added yet</p>';
             } else{
                 for (let i = 0; i < userFavs.length; i++) {
-                    favRender = favRender.concat('<li class="film-item col-12 col-md-4 d-flex align-items-center mb-3" data-id="'+ userFavs[i].imdbID +'"><img src="'+ userFavs[i].Poster +'"><div><p>'+ userFavs[i].Title +' ('+ userFavs[i].Year +')</p><button class="details-button btn btn-primary">Ver detalle</button></div></li>');
+                    favRender = favRender.concat('<li class="film-item col-12 col-md-4 d-flex align-items-center mb-3" data-id="'+ userFavs[i].imdbID +'"><img src="'+ userFavs[i].Poster +'"><div><p>'+ userFavs[i].Title +' ('+ userFavs[i].Year +')</p><button class="details-button btn btn-primary">More info</button></div></li>');
 
                     favList.innerHTML = favRender;
                 }
