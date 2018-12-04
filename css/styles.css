@@ -238,3 +238,18 @@ img.fav-icon{
         max-width: 170px;
     }
 }
+
+.footer__github{
+    width: 150px;
+    margin: 0 auto;
+}
+
+@media (max-width: 540px){
+    .footer__github{
+        width: 120px;
+    }
+}
+
+.footer__github img{
+    filter: invert(1);
+}
