@@ -311,10 +311,10 @@ function determineFav(){
                     }
                 } else {
                     document.querySelector('.tooltip-msg').classList.remove('d-none');
-                    if((pageYOffset + e.clientY - 70) > 10){
+                    if((pageYOffset + e.clientY - 70) > 30){
                         document.querySelector('.tooltip-msg').style.top = pageYOffset + e.clientY - 70 +'px';
                     } else {
-                        document.querySelector('.tooltip-msg').style.top = '10px';
+                        document.querySelector('.tooltip-msg').style.top = '30px';
                     }
                     if ((e.clientX - 100) > 10){
                         document.querySelector('.tooltip-msg').style.left = e.clientX - 100 +'px';
