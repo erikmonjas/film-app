@@ -166,6 +166,8 @@ function showFilmDetails() {
             
         }
         determineFav();
+        
+        fadeIn();
 
     }).catch(function (err) {
         console.log(err);
