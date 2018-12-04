@@ -11,57 +11,59 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header class="navbar d-flex space-between header">
-        <div class="container">
-            <a href="index.html"><img src="./img/logo.png" alt="logo" class="logo"></a>
-            <div class="session-wrapper">
-                <div class="login-form d-flex d-lg-block">
-                    <form class="d-flex align-items-center mt-2">
-                        <div class="login-form__inputs d-none d-lg-flex">
-                            <label for="user" class="d-none">User</label>
-                            <input type="text" id="user" name="user" class="form-control form__input mx-4" placeholder="User">
-                            <label for="password" class="d-none">Password</label>
-                            <input type="text" id="password" name="password" class="form-control form__input mx-4" placeholder="Password">
-                            <span class="mobile-login-error d-none font-weight-bold text-white">Wrong data. Remember you must be registered.</span>
-                            <button type="submit" class="btn btn-primary">Access</button>
-                        </div>
-                    </form>
-                    <a href="create-account.html" class="mobile-access d-lg-none mt-3 ml-4 text-white">Access</a>
-                    <p class="desktop-login-error d-lg-none font-weight-bold float-left mt-3 ml-4 text-white">Wrong data. Remember you must be registered.</p>
-                    <a href="create-account.html" class="register float-right mt-3 ml-4 text-white">Register</a>
-                </div>
-                <div class="user-data d-none flex-column align-items-center">
-                    <span class="user-data__img"><img src="./img/user-avatar.png" alt="avatar"></span>
-                    <span class="user-data__name"></span>
+    <div class="everything-wrapper">
+        <header class="navbar d-flex space-between header">
+            <div class="container">
+                <a href="index.html"><img src="./img/logo.png" alt="logo" class="logo fade-out"></a>
+                <div class="session-wrapper">
+                    <div class="login-form d-flex d-lg-block">
+                        <form class="d-flex align-items-center mt-2">
+                            <div class="login-form__inputs d-none d-lg-flex">
+                                <label for="user" class="d-none">User</label>
+                                <input type="text" id="user" name="user" class="form-control form__input mx-4" placeholder="User">
+                                <label for="password" class="d-none">Password</label>
+                                <input type="text" id="password" name="password" class="form-control form__input mx-4" placeholder="Password">
+                                <span class="mobile-login-error d-none font-weight-bold text-white">Wrong data. Remember you must be registered.</span>
+                                <button type="submit" class="btn btn-primary">Access</button>
+                            </div>
+                        </form>
+                        <a href="create-account.html" class="mobile-access d-lg-none mt-3 ml-4 text-white">Access</a>
+                        <p class="desktop-login-error d-lg-none font-weight-bold float-left mt-3 ml-4 text-white">Wrong data. Remember you must be registered.</p>
+                        <a href="create-account.html" class="register float-right mt-3 ml-4 text-white fade-out">Register</a>
+                    </div>
+                    <div class="user-data d-none flex-column align-items-center">
+                        <span class="user-data__img"><img src="./img/user-avatar.png" alt="avatar"></span>
+                        <span class="user-data__name"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-            <p class="tooltip-msg d-none">You must be logged in to add favourites</p>
-        <div class="container mt-5">
-            <h1 class="text-uppercase text-center font-weight-bold ls-10">Films</h1>
+        </header>
+        <main>
+                <p class="tooltip-msg d-none">You must be logged in to add favourites</p>
+            <div class="container mt-5">
+                <h1 class="text-uppercase text-center font-weight-bold ls-10">Films</h1>
 
-            <section class="mt-4 film-search">
-                <form class="form-group" id="filmForm">
-                    <h2>Search film</h2>
-                    <div class="d-flex align-items-center mt-4">
-                        <label for="movieTitle" class="d-none">title</label>
-                        <input type="text" class="form-control form__input" id="movieTitle" name="movieTitle" placeholder="Title">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </div>
-                </form>
-                <p class="film-search__message d-none font-weight-bold mt-4"></p>
-                <ul class="film-search__results d-none row"></ul>
-            </section>
+                <section class="mt-4 film-search">
+                    <form class="form-group" id="filmForm">
+                        <h2>Search film</h2>
+                        <div class="d-flex align-items-center mt-4">
+                            <label for="movieTitle" class="d-none">title</label>
+                            <input type="text" class="form-control form__input" id="movieTitle" name="movieTitle" placeholder="Title">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
+                    <p class="film-search__message d-none font-weight-bold mt-4"></p>
+                    <ul class="film-search__results d-none row"></ul>
+                </section>
 
-            <section class="mt-5">
-                <h2>Favourite films</h2>
-                <div class="fav-list row"></div>
-            </section>
-        </div>
-    </main>
-    <script src="./js/main.js"></script>
-    <script>showFavs()</script>
+                <section class="mt-5">
+                    <h2>Favourite films</h2>
+                    <div class="fav-list row"></div>
+                </section>
+            </div>
+        </main>
+        <script src="./js/main.js"></script>
+        <script>showFavs()</script>
+    </div>
 </body>
 </html>
