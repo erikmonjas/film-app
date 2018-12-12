@@ -1,6 +1,8 @@
 # OMDb-based Film App
 This is a demo film app created thanks to the OMDb API open movie database. It was made with a 100% ES5 Vanilla Javascript. Search films, register and add them to your favs!
 
+[Enjoy it here](https://erikmonjas.github.io/film-app/index.html)
+
 ## Home page
 Initially, you can search here for any movie by its title. If you're registered, you'll see your favourites list below. 
 
